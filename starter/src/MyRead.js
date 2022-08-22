@@ -5,8 +5,11 @@ import Bookshelf from "./Bookshelf";
 import SearchBooks from "./SearchBooks";
 
 const MyRead = ({ books, setBooks }) => {
+
   const handleBookshelfUpdate = (book) => {
+
     let bookInAShelf = false;
+
     const updateBookshelf = () =>
       books.map((b) => {
         if (b.id === book.id) {
@@ -16,6 +19,7 @@ const MyRead = ({ books, setBooks }) => {
           return b;
         }
       });
+      
     setBooks(updateBookshelf);
 
     if (!bookInAShelf) {

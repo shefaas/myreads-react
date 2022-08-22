@@ -1,6 +1,8 @@
-import "./App.css";
-import * as BooksAPI from "./BooksAPI";
 import { useState, useEffect } from 'react';
+import "./App.css";
+
+import * as BooksAPI from "./BooksAPI";
+
 import MyRead from "./MyRead";
 
 function App() {
@@ -12,6 +14,10 @@ function App() {
             setBooks(res);
         }
         getAllBooks();
+
+        return () => {
+            setBooks([]);
+        };
         
     }, [])
 

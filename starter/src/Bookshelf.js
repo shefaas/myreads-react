@@ -8,6 +8,9 @@ const Bookshelf = ({ title, bookshelfCode, shelvedBooks, onBookshelfUpdate }) =>
 
   useEffect(() => {
     setBookshelfBooks(shelvedBooks.filter((book) => book.shelf === bookshelfCode));
+
+    return () => {};
+    
   }, [shelvedBooks]);
 
   return (
