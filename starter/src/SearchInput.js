@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 import * as BooksAPI from "./BooksAPI";
 
 const SearchInput = ({ setShowingResults, setEmptyResult }) => {
   const [searchInput, setSearchInput] = useState("");
-
-  useEffect(() => {}, [searchInput]);
 
   const handleSearch = (event) => {
     const value = event.target.value;
@@ -43,6 +42,11 @@ const SearchInput = ({ setShowingResults, setEmptyResult }) => {
       />
     </div>
   );
+};
+
+SearchInput.propTypes = {
+    setShowingResults: PropTypes.func,
+    setEmptyResult: PropTypes.bool,
 };
 
 export default SearchInput;
