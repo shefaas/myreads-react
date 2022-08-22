@@ -46,7 +46,7 @@ const SearchInput = ({ setShowingResults, setEmptyResult }) => {
 
 SearchInput.propTypes = {
     setShowingResults: PropTypes.func,
-    setEmptyResult: PropTypes.bool,
+    setEmptyResult: PropTypes.func,
 };
 
 export default SearchInput;
