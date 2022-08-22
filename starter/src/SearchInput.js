@@ -9,12 +9,10 @@ const SearchInput = ({ setShowingResults, setEmptyResult }) => {
 
   const handleSearch = (event) => {
     const value = event.target.value;
-    console.log( {value} );
     resetSearchResults();
 
     const searchForBooks = async () => {
       const res = await BooksAPI.search(value);
-      console.log({ res });
       if (res.error) {
         setEmptyResult(true);
       } else {

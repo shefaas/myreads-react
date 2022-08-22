@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
 
-import * as BooksAPI from "./BooksAPI";
-
 const BookshelfChanger = ({ book, onBookshelfUpdate }) => {
   const handleChange = async (value) => {
     onBookshelfUpdate({ ...book, shelf: value });
