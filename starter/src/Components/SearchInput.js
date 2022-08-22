@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-import * as BooksAPI from "./BooksAPI";
+import * as BooksAPI from "./../BooksAPI";
 
 const SearchInput = ({ setShowingResults, setEmptyResult }) => {
   const [searchInput, setSearchInput] = useState("");

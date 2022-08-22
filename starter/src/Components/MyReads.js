@@ -1,12 +1,12 @@
 import { Routes, Route, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import * as BooksAPI from "./BooksAPI";
+import * as BooksAPI from "../BooksAPI";
 
 import Bookshelf from "./Bookshelf";
 import SearchBooks from "./SearchBooks";
 
-const MyRead = ({ books, setBooks }) => {
+const MyReads = ({ books, setBooks }) => {
 
   const handleBookshelfUpdate = async (book) => {
 
@@ -84,9 +84,9 @@ const MyRead = ({ books, setBooks }) => {
   );
 };
 
-MyRead.propTypes = {
+MyReads.propTypes = {
   books: PropTypes.array.isRequired,
   setBooks: PropTypes.func.isRequired,
 };
 
-export default MyRead;
+export default MyReads;

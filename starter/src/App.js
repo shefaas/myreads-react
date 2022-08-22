@@ -3,7 +3,7 @@ import "./App.css";
 
 import * as BooksAPI from "./BooksAPI";
 
-import MyRead from "./MyRead";
+import MyReads from './Components/MyReads';
 
 function App() {
     const [books, setBooks] = useState([]);
@@ -22,7 +22,7 @@ function App() {
     }, [])
 
     return (
-        <MyRead books={books} setBooks={setBooks} />
+        <MyReads books={books} setBooks={setBooks} />
     );
 }
 
