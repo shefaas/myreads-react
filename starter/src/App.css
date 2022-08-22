@@ -106,6 +106,16 @@ body,
   padding: 80px 10px 20px;
 }
 
+.search-no-results {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 0.8em;
+  color: rgb(125, 125, 125);
+}
+
 /* books grid */
 
 .books-grid {
