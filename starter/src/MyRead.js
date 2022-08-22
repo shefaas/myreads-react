@@ -1,12 +1,16 @@
 import { Routes, Route, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import * as BooksAPI from "./BooksAPI";
+
 import Bookshelf from "./Bookshelf";
 import SearchBooks from "./SearchBooks";
 
 const MyRead = ({ books, setBooks }) => {
 
-  const handleBookshelfUpdate = (book) => {
+  const handleBookshelfUpdate = async (book) => {
+
+    await BooksAPI.update(book, book.shelf);
 
     let bookInAShelf = false;
 
@@ -19,7 +23,7 @@ const MyRead = ({ books, setBooks }) => {
           return b;
         }
       });
-      
+
     setBooks(updateBookshelf);
 
     if (!bookInAShelf) {
