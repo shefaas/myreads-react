@@ -4,10 +4,12 @@ import { useLocation } from "react-router-dom";
 const BookDetails = () => {
   const location = useLocation();
   const { book } = location.state;
-  
+
   return (
-    <div className="book">
-      <div className="book-top">
+    <div style={{margin: 50}}>
+        {book.title && <h2>{book.title}</h2>}
+        {book.authors && <p className="book-authors">{book.authors}</p>}
+      <div>
         {book.imageLinks && book.imageLinks.thumbnail && (
           <img
             className="book-cover"
@@ -16,15 +18,13 @@ const BookDetails = () => {
           />
         )}
       </div>
-
-      {book.title && <p className="book-title">{book.title}</p>}
-      {book.authors && <p className="book-authors">{book.authors}</p>}
+      {book.description && <p>{book.description}</p>}
     </div>
   );
 };
 
 BookDetails.propTypes = {
-  book: PropTypes.object.isRequired,
+  book: PropTypes.object,
 };
 
 export default BookDetails;
