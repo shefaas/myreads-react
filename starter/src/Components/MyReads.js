@@ -6,11 +6,10 @@ import * as BooksAPI from "../BooksAPI";
 import Bookshelf from "./Bookshelf";
 import SearchBooks from "./SearchBooks";
 import Page404 from "./Page404";
+import BookDetails from "./BookDetails";
 
 const MyReads = ({ books, setBooks }) => {
-
   const handleBookshelfUpdate = async (book) => {
-
     await BooksAPI.update(book, book.shelf);
 
     let bookInAShelf = false;
@@ -81,12 +80,8 @@ const MyReads = ({ books, setBooks }) => {
           />
         }
       />
-      <Route
-        path="*"
-        element={
-          <Page404 />
-        }
-      />
+      <Route path="/books/*" element={<BookDetails />} />
+      <Route path="*" element={<Page404 />} />
     </Routes>
   );
 };
