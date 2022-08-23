@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import PropTypes from "prop-types";
+
+import debounce from "lodash/debounce";
 
 import * as BooksAPI from "./../BooksAPI";
 
 const SearchInput = ({ setShowingResults, setEmptyResult }) => {
   const [searchInput, setSearchInput] = useState("");
 
-  const handleSearch = (event) => {
-    const value = event.target.value;
+  const handleSearch = (value) => {
     resetSearchResults();
 
     const searchForBooks = async () => {
@@ -32,21 +33,29 @@ const SearchInput = ({ setShowingResults, setEmptyResult }) => {
   };
 
 
+  const debounceInput = useCallback(debounce(handleSearch, 500), []);
+
+  const handleDebounce = (event) => {
+    setSearchInput(event.target.value);
+    debounceInput(event.target.value);
+  }
+
+
   return (
     <div className="search-books-input-wrapper">
       <input
         type="text"
         value={searchInput}
         placeholder="Search by title, author, or ISBN"
-        onChange={handleSearch}
+        onChange={handleDebounce}
       />
     </div>
   );
 };
 
 SearchInput.propTypes = {
-    setShowingResults: PropTypes.func,
-    setEmptyResult: PropTypes.func,
+  setShowingResults: PropTypes.func,
+  setEmptyResult: PropTypes.func,
 };
 
 export default SearchInput;
