@@ -30,7 +30,8 @@ To run the project:
     │   ├── MyReads.js # This is the main component that hold both bookshelves and search page.
     │   ├── Bookshelf.js # The component that can render the three bookshelves, each with its books.
     │   ├── BooksGrid.js # The component that create the books grid inside the bookshelf.
-    │   ├── Book.js # The component that render each book with its thumbnail and details.
+    │   ├── Book.js # The component that render each book with its thumbnail, title and author.
+    │   ├── BookDetails.js # The component that render each book details in a separate page.
     │   ├── BookshelfChanger.js # The component that shows select element for each book.
     │   ├── SearchBooks.js # The component for search page that holds search results as a book grid and the search input.
     │   └── SearchInput.js # The component that hold search input and run the actual search.
