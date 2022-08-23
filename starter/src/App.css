@@ -185,3 +185,8 @@ body,
   text-align: center;
   font-size: 0.8em;
 }
+
+.page-404 {
+  position: relative;
+  margin: 250px 380px;
+}

@@ -5,6 +5,7 @@ import * as BooksAPI from "../BooksAPI";
 
 import Bookshelf from "./Bookshelf";
 import SearchBooks from "./SearchBooks";
+import Page404 from "./Page404";
 
 const MyReads = ({ books, setBooks }) => {
 
@@ -78,6 +79,12 @@ const MyReads = ({ books, setBooks }) => {
             shelvedBooks={books}
             onBookshelfUpdate={handleBookshelfUpdate}
           />
+        }
+      />
+      <Route
+        path="*"
+        element={
+          <Page404 />
         }
       />
     </Routes>
